@@ -4,7 +4,7 @@ import random
 from tkinter import messagebox as mb
 
 t = Tk()
-t.title("Game Skok")
+t.title("Game Virus")
 t.resizable(0, 0)
 t.wm_attributes("-topmost", 1)
 c = Canvas(t, width = 800, height = 600, bd = 0, highlightthickness=0, bg="white")
@@ -87,7 +87,7 @@ class ball:
 
 
             
-moe = (PhotoImage(file='D:/PROGY/Python_OLEG/ukol.png'))
+moe =(PhotoImage(file= 'ukol.png'))
 Protec = Protector(c, moe)
 
 c.bind_all('<KeyPress-Up>', Protec.knopka)
@@ -97,10 +97,10 @@ c.bind_all('<KeyPress-Right>', Protec.knopka)
 
 
 virus_list = []
-virusy = (PhotoImage(file='D:/PROGY/Python_OLEG/virus1.png'),
-PhotoImage(file='D:/PROGY/Python_OLEG/virus2.png'),
-PhotoImage(file='D:/PROGY/Python_OLEG/virus3.png'),
-PhotoImage(file='D:/PROGY/Python_OLEG/virus4.png'))
+virusy = (PhotoImage(file='virus1.png'),
+PhotoImage(file='virus2.png'),
+PhotoImage(file='virus3.png'),
+PhotoImage(file='virus4.png'))
 virus_list.append(ball(c, virusy[random.randint(0,3)]))
 
 h = time.time()
