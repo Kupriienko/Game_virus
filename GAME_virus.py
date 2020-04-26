@@ -13,17 +13,17 @@ t.update()
 
 def end():
     if len(virus_list) == 7:
-        mb.showinfo("","вам піздец!!!!!")
+        mb.showinfo("loh","вам піздец!!!!!")
         return 1
     elif len(virus_list) == 0:
-        mb.showinfo("","ти виздорові. іди єбош!!")
+        mb.showinfo("kros","ти виздорові. іди єбош!!")
         return 1
 class Protector:
     def __init__(self, canvas, moe):
         self.canvas = canvas
         self.id = canvas.create_image(10,10, anchor= NW,  image = moe)
         self.canvas.move(self.id, 400, 300)
-        starts = [-10, -9, -8, -7, -6, 6, 7, 8, 9, 10]
+        starts = [-15, 15]
         random.shuffle(starts)
         self.x = starts[0]
         random.shuffle(starts)
@@ -32,13 +32,13 @@ class Protector:
         self.canvas_width = self.canvas.winfo_width()
     def knopka(self,event):
         if event.keysym == 'Up':
-            self.canvas.move(self.id, 0, -5)
+            self.canvas.move(self.id, 0, -13)
         elif event.keysym == 'Down':
-            self.canvas.move(self.id, 0, 5)
+            self.canvas.move(self.id, 0, 13)
         elif event.keysym == 'Left':
-            self.canvas.move(self.id, -5, 0)
+            self.canvas.move(self.id, -13, 0)
         else:
-            self.canvas.move(self.id, 5, 0)    
+            self.canvas.move(self.id, 13, 0)    
     def drow(self,):
         self.canvas.move(self.id, self.x, self.y)
         pos = self.canvas.coords(self.id)
@@ -57,7 +57,7 @@ class ball:
     def __init__(self, canvas, moe):
         self.canvas = canvas
         self.id = canvas.create_image(10,10, anchor= NW,  image = moe)
-        self.canvas.move(self.id, random.randint(0, 800), random.randint(0, 600))
+        self.canvas.move(self.id, random.randint(0, 800), random.randint(0, 100))
         starts = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         random.shuffle(starts)
         self.x = starts[0]
